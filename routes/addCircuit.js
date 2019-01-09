@@ -40,8 +40,8 @@ router.post('/', function (req, res) {
       apiBoundingBox = bounds[0]+','+bounds[1]+','+bounds[2]+','+bounds[3];
       circuitBoundaries = bounds;
       var apiCategories = [
-                            'leisure-outdoor','landmark-attraction','going-out',
-                            'eat-drink', 'natural-geographical', 'sights-museums'
+                            /*'leisure-outdoor','landmark-attraction','going-out',
+                            */'eat-drink'/*, 'natural-geographical', 'sights-museums'*/
                           ];
       var cat = apiCategories[Math.floor(Math.random()*apiCategories.length)];
       var api = process.env.HERE_API+ apiBoundingBox +'&cat='+cat;
@@ -55,7 +55,7 @@ router.post('/', function (req, res) {
           var sets_challenges = [];
           console.log("Places found: " + places.length);
           //which is longer, 10 or place.length...
-          var challengeLimit = 2; //set to number of challenges you want...
+          var challengeLimit = 3; //set to number of challenges you want...
           if (places.length < challengeLimit){
             challengeLimit = places.length;
           }

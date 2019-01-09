@@ -93,7 +93,7 @@ export default class FormDialog extends React.Component {
     const addUserGeckoDesigns = process.env.REACT_APP_BACK_END_SERVER + 'addUserGeckoDesigns';
     //must use fat arrow function in callback to bind FormDialog's this
     //to inside the function itself:
-    axios.post(addUser, userObject).then((res, err) => {
+    axios.post(addUserGeckoDesigns, userObject).then((res, err) => {
       if(err) {console.error(err);}
         console.log("passed value prop: ", this.props.value);
         console.log("Add user server response (should be user id):", res.data);
