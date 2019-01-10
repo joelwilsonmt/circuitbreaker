@@ -346,7 +346,7 @@ this.onFormChange = (e) => {
                   Sorry you did not break the circuit! Better luck next time! Here's a quick look at the winning picture:
                 </DialogContentText>
                 <div class="center image-wrapper">
-                  <img src={this.state.winningImage} alt='' />
+                  <img className="image" src={this.state.winningImage} alt='' />
                     <div class="overlay">
                     </div>
                 </div>

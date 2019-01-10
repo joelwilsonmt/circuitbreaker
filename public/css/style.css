@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Aldrich');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 h1 h1,h2,h3,h4,h5,h6, div {
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: 'Aldrich', sans-serif !important;
   letter-spacing: 0.05em !important;
   color: #FFF !important;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 p, li, span, input, label {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Exo 2', sans-serif !important;
   letter-spacing: 0.1em !important;
   word-spacing: 0.01em !important;
 }
@@ -195,4 +195,13 @@ div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
 }
 div[class^='MuiDialog-paper'] button[class^='MuiButtonBase-root'], div[class*=' MuiDialog-paper'] {
   color: red !important;
+}
+
+.image {
+  border: 1px solid #fff !important;
+  border-radius: 5px !important;
+}
+/*fixing the camera buttons inline*/
+.bump-right {
+  margin-right: 25px !important;
 }

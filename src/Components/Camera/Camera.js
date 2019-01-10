@@ -176,8 +176,8 @@ export default class App extends Component {
         </Typography>
         {this.state.screenshot ?
         <img
-
-        height={300}
+        className="image"
+        height={250}
         src={this.state.screenshot} alt='' /> : null}
 
           <div>
@@ -203,7 +203,7 @@ export default class App extends Component {
                         </DialogContentText>
 
                         <div class="center image-wrapper">
-                          <img src={this.state.screenshot} alt='' />
+                          <img className="image" src={this.state.screenshot} alt='' />
                             <div class="overlay">
 
                             </div>
@@ -222,10 +222,10 @@ export default class App extends Component {
 
               </Dialog>
 
-              <div class="center">
+              <div class="center padder">
 
                     <Button
-                      className="animated pulse infinite center"
+                      className="animated pulse infinite center bump-right"
                       justify="center"
                       variant="contained"
                       size="small"
@@ -238,7 +238,7 @@ export default class App extends Component {
 
                     <Button
                      justify="center"
-                      variant="contained"
+                      className="white"
                       size="small"
                       onClick={this.resetCamera}>
                       Retake
@@ -335,8 +335,9 @@ export default class App extends Component {
             screenshotFormat="image/jpeg"
             ref={node => this.webcam = node}
             screenshotQuality={.8}
-            width={375}
-            height={300}
+            width={350}
+            height={250}
+            className="camera"
             videoConstraints={videoConstraints}
           />
 
