@@ -215,9 +215,10 @@ export class MapContainer extends React.Component {
         {this.props.value.circuit.challenges.map((challenge, i) => {
             return <InfoWindow
                     key={"info" + i}
+                    className="black-bg"
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}>
-                      <div>
+                      <div >
                         <h1>{this.state.selectedPlace.challengeText}</h1>
                         <h2>{this.state.selectedPlace.name}</h2>
                         <h2>{this.state.selectedPlace.address ? <h2>Address: {this.state.selectedPlace.address}</h2> : ''}</h2>

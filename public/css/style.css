@@ -186,15 +186,12 @@ h2 {
 }
 
 /*-----------------transparent dialogues--------------------------*/
-div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper']  {
+div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper'] {
   background: rgba(0,0,0,.9) !important;
   border: 1px solid #aaa;
 }
 div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
   color: #fff !important;
-}
-div[class^='MuiDialog-paper'] button[class^='MuiButtonBase-root'], div[class*=' MuiDialog-paper'] {
-  color: red !important;
 }
 
 .image {
@@ -204,4 +201,7 @@ div[class^='MuiDialog-paper'] button[class^='MuiButtonBase-root'], div[class*=' 
 /*fixing the camera buttons inline*/
 .bump-right {
   margin-right: 25px !important;
+}
+.map-wrapper * {
+  color: #000 !important;
 }

@@ -194,7 +194,7 @@ export default class FormDialog extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">ENTER USER NAME</DialogTitle>
+          <DialogTitle className="center" id="form-dialog-title">ENTER USER NAME</DialogTitle>
 
           <form onSubmit={this.handleClose && this.submitUserToServer} noValidate autoComplete="off" >
 
