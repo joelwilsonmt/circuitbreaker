@@ -184,3 +184,11 @@ h2 {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/*-----------------transparent dialogues--------------------------*/
+div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper']  {
+  background: rgba(0,0,0,.9) !important;
+}
+div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
+  color: #fff !important;
+}

@@ -89,6 +89,7 @@ class OpeningScreen extends React.Component {
             )
           }</GameContext.Consumer>
           <Dialog
+            className="trans"
             open={this.state.introWindowOpen}
             onClose={this.handleClose}
             aria-labelledby="form-dialog-title"
