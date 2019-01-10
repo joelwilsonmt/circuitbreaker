@@ -4,7 +4,7 @@
 h1 h1,h2,h3,h4,h5,h6, div {
   font-family: 'Ubuntu', sans-serif !important;
   letter-spacing: 0.05em !important;
-  color: #3E51B5 !important;
+  color: #FFF !important;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 p, li, span, input, label {
@@ -192,4 +192,7 @@ div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper']  {
 }
 div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
   color: #fff !important;
+}
+div[class^='MuiDialog-paper'] button[class^='MuiButtonBase-root'], div[class*=' MuiDialog-paper'] {
+  color: red !important;
 }

@@ -212,7 +212,10 @@ export default class App extends Component {
                     </DialogContent>
 
                     <DialogActions>
-                        <Button onClick={this.handleDialogue} color="primary">
+                        <Button
+                          onClick={this.handleDialogue}
+                          color="primary"
+                          variant="contained">
                           Review Circuit
                         </Button>
                       </DialogActions>
