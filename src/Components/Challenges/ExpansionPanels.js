@@ -87,7 +87,7 @@ class SimpleExpansionPanel extends React.Component{
         </Typography>
         <Typography >
           {
-            (this.props.distance < 15) ? 'You can take a selfie!' : 'You can take a picture, but it wont count'
+            (this.props.distance < .1) ? 'You are within range! You can take a selfie!' : 'You are too far away. You can take a picture, but it will not count.'
           }
         </Typography>
       </div>

@@ -53,7 +53,7 @@ router.put('/', function (req, res) {
   //var distanceWin = isWithinWinDistance(data.location_to_check, data.user_position, "meter", 40000);
   //changed to miles to match front end miles display:
 
-  var distanceWin = isWithinWinDistance(data.location_to_check, data.user_position, "mile", 15);
+  var distanceWin = isWithinWinDistance(data.location_to_check, data.user_position, "mile", .1);
   var pictureFile = data.screenshot;
   var wordToCheck = data.check_word;
   var base64Image = pictureFile.split("data:image/jpeg;base64,")[1];
