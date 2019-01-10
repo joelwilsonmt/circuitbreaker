@@ -205,3 +205,7 @@ div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
 .map-wrapper * {
   color: #000 !important;
 }
+div[class^='MuiExpansionPanelSummary-expandIcon'] span *, div[class*=' MuiExpansionPanelSummary-expandIcon'] span * {
+  border: 1px solid #fff !important;
+  border-radius: 100px !important;
+}

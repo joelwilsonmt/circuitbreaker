@@ -384,13 +384,8 @@ this.onFormChange = (e) => {
 
             {value === 'challenges' &&
               <div>
-                <Grid item xs={12}>
-                  <Typography variant="h4" className="white center padder">
-                  {this.state.username}
-                  </Typography>
-                </Grid>
             <div className="center">
-              <Typography className="center white" variant="h4">
+              <Typography className="center white padder" variant="h4">
                 Challenges
               </Typography>
               <div className="padder">
@@ -430,15 +425,10 @@ this.onFormChange = (e) => {
             {value === 'map' && <Map/>}
 
             {value === 'chat' &&
-              <div><Grid item xs={12}>
-                <Typography variant="h4" className="white center padder">
-                {this.state.username}
-                </Typography>
-              </Grid>
                 <GameContext.Consumer>{
                     (game) => (
                 <Chat chat={this} value={game}/>
-                )}</GameContext.Consumer></div>
+                )}</GameContext.Consumer>
             }
 
             {(this.state.messages.length > 0) ?

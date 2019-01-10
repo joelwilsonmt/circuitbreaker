@@ -253,7 +253,6 @@ export default class App extends Component {
               <div class='center'>
               <Button
                 justify="center"
-                variant="contained"
                 size="small"
                 justify="center"
                 color="primary"
@@ -281,7 +280,8 @@ export default class App extends Component {
           <GameContext.Consumer>{
             (game) => (
           <DialogActions>
-            <Button onClick={() => game.updateGameAndSetView(game.user._id, 'Challenges')} color="primary">
+            <Button variant="contained"
+              onClick={() => game.updateGameAndSetView(game.user._id, 'Challenges')} color="primary">
               Back to Challenges
             </Button>
           </DialogActions>
@@ -306,7 +306,7 @@ export default class App extends Component {
           <GameContext.Consumer>{
             (game) => (
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button variant="contained" onClick={this.handleClose} color="primary">
               Try Again
             </Button>
             <Button onClick={() => game.setView('Challenges')} color="primary">
@@ -355,10 +355,10 @@ export default class App extends Component {
             (game) => (
               <div class="center">
               <Button
-                variant="contained"
                 size="small"
                 justify="center"
                 color="primary"
+                className="white"
                 onClick={() => game.setView('')}>
                 Back to Challenges
               </Button>
