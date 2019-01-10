@@ -95,7 +95,7 @@ class OpeningScreen extends React.Component {
           >
             <DialogTitle className="center" id="form-dialog-title">RULES</DialogTitle>
             <DialogContent>
-              <Typography>
+              <Typography className="center">
                 {this.state.messages[this.state.slide].message}
               </Typography>
             </DialogContent>

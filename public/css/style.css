@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+h1 h1,h2,h3,h4,h5,h6, div {
+  font-family: 'Ubuntu', sans-serif !important;
+  letter-spacing: 0.05em !important;
+  color: #3E51B5 !important;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+p, li, span, input, label {
+  font-family: 'Roboto', sans-serif !important;
+  letter-spacing: 0.1em !important;
+  word-spacing: 0.01em !important;
+}
+
 html {
     overflow: scroll;
     overflow-x: hidden;
@@ -20,10 +35,6 @@ body {
 }
 .MuiButton-contained-188 {
   box-shadow: none !important;
-}
-h1 {
-  color: #3E51B5 !important;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 .white, .white h1, .white h2, .white h3, .white h4, .white h5, .white h6, .white p, .white span, .white input, .white label, .white li {
@@ -156,7 +167,7 @@ h2 {
   width: 100%;
   /* opacity: .5;
   transition: .5s ease;*/
-  background-color: rgba(0,0,0,0.25); 
+  background-color: rgba(0,0,0,0.25);
   background-repeat: no-repeat;
    background-size: 30%;
    /*https://pixelspeechbubble.com/*/
