@@ -338,7 +338,7 @@ this.onFormChange = (e) => {
               aria-labelledby="alert-dialog-slide-title"
               aria-describedby="alert-dialog-slide-description"
             >
-              <DialogTitle id="alert-dialog-slide-title">
+              <DialogTitle className='center' id="alert-dialog-slide-title">
                 {"Sorry! You Were Too Slow!"}
               </DialogTitle>
               <DialogContent>
@@ -348,11 +348,6 @@ this.onFormChange = (e) => {
                 <div class="center image-wrapper">
                   <img src={this.state.winningImage} alt='' />
                     <div class="overlay">
-                      <div class="overlay-text">
-                        <Typography variant="h4" className="white">
-                          Winner!
-                      </Typography>
-                      </div>
                     </div>
                 </div>
               </DialogContent>
