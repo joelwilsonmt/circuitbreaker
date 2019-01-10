@@ -83,7 +83,8 @@ router.post('/', function (req, res) {
             //   'yogurt'
             // ];
              var words = [
-               'thumbs up'
+               'thumbs up', 'banana', 'fork', 'can', 'cup', 'frisbee', 'plant', 'pizza', 'smile',
+               'mobile phone'
              ];
             var objectGate = words[Math.floor(Math.random()*words.length)];
             var fullText = 'Take a ' + objectGate + ' to ' + places[i].title + ' and take a selfie with it.';

@@ -5,10 +5,12 @@ import ChallengesWrapper from "./Challenges/ChallengesWrapper";
 // import Challenges from "./Challenges/Challenges";
 // import Map from "./Map/Map";
 import Camera from "./Camera/Camera";
+import ContactUs from "./ContactUs/ContactUs";
 import CircuitReview from "./CircuitReview/CircuitReview";
 import OpeningScreen from "./OpeningScreen/OpeningScreen";
 import MainAppBar from "./Utilities/MainAppBar";
 import NoPage from "./Utilities/NoPage";
+import ContactUsButton from "./ContactUs/ContactUsButton";
 // import GameProvider from "./Contexts/GameContext";
 // import {GameContext} from "./Contexts/GameContext";
 import {createMuiTheme} from '@material-ui/core/styles';
@@ -96,11 +98,24 @@ class App extends React.Component {
 
       );
     }
+    else if (this.props.value.screen === 'ContactUs'){
+      return (
+
+        <div>
+          <MuiThemeProvider theme={theme}>
+            <MainAppBar/>
+            <ContactUs/>
+          </MuiThemeProvider>
+        </div>
+
+      );
+    }
     else if (this.props.value.screen === 'CircuitReview'){
       return (
         <div>
           <MuiThemeProvider theme={theme}>
             <MainAppBar/>
+            <ContactUsButton/>
               <GameContext.Consumer>{
                   (game) => (<CircuitReview value={game}/>)
           }</GameContext.Consumer>

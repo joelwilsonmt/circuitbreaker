@@ -3,6 +3,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import {GameContext} from "../Contexts/GameContext";
+import ContactUs from "../ContactUs/ContactUs";
 
 class SimpleMenu extends React.Component {
   state = {
@@ -16,39 +18,9 @@ class SimpleMenu extends React.Component {
   handleClose = () => {
     this.setState({ anchorEl: null });
   };
-
-  routeHome = () => {
-    this.props.value.setScreen('OpeningScreen');
+  routeContact = () => {
+    this.props.value.setScreen('ContactUs');
   }
-
-  routeGameRoom = () => {
-    this.props.value.setScreen('GameRoom');
-  }
-
-  routeChallenges = () => {
-    this.props.value.setScreen('Challenges');
-  }
-
-  routeCamera = () => {
-    this.props.value.setScreen('Camera');
-  }
-
-  routeCircuitReview = () => {
-    this.props.value.setScreen('CircuitReview');
-  }
-
-  routeHome = () => {
-    this.props.value.setScreen('OpeningScreen');
-  }
-
-  // restartGame = () => {
-  //   this.setState({
-  //     userNameInputValue: '',
-  //     idSearch: '',
-  //     _id: ''
-  //   });
-  // }
-
   render() {
     const { anchorEl } = this.state;
     return (
@@ -69,56 +41,16 @@ class SimpleMenu extends React.Component {
           <MenuItem onClick={
             (event) => {
               this.handleClose();
-              this.routeHome();
+              this.routeContact();
             }}>
-            HOME
+            CONTACT THE DEVELOPERS
           </MenuItem>
-
-          <MenuItem onClick={
-            (event) => {
-              this.handleClose();
-              this.routeGameRoom();
-            }}>
-            GAME ROOM
-          </MenuItem>
-
-          <MenuItem onClick={
-            (event) => {
-              this.handleClose();
-              this.routeChallenges();
-            }}>
-            CHALLENGES
-          </MenuItem>
-
-          <MenuItem onClick={
-            (event) => {
-              this.handleClose();
-              this.routeCamera();
-            }}>
-            CAMERA
-          </MenuItem>
-
-          <MenuItem onClick={
-            (event) => {
-              this.handleClose();
-              this.routeCircuitReview();
-            }}>
-            CIRCUIT REVIEW
-          </MenuItem>
-
-          <MenuItem onClick={
-            (event) => {
-              this.handleClose();
-              this.routeHome();
-              // this.restartGame.bind(this)
-            }}>
-            LOG OUT
-          </MenuItem>
-
         </Menu>
       </div>
     );
   }
 }
+
+
 
 export default SimpleMenu;
