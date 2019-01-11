@@ -126,7 +126,7 @@ export default class App extends Component {
         console.log("challenge complete!");
           this.setState({
           challengeCompleteOpen: true,
-          message: 'Nice job! We detected ' + this.props.value.currentChallenge.object_gate + ' in your picture, and you were within range of ' + this.props.value.currentChallenge.location_gate.name + '!'
+          message: 'Nice job! We detected a ' + this.props.value.currentChallenge.object_gate + ' in your picture, and you were within range of ' + this.props.value.currentChallenge.location_gate.name + '!'
         });
         this.props.socket.sendWin();
       }
@@ -135,21 +135,21 @@ export default class App extends Component {
         if (res.data.objectGate){
           this.setState({
             challengeRejectedOpen: true,
-            message: 'We detected ' + this.props.value.currentChallenge.object_gate + ' in your picture, but your are not close enough!',
+            message: 'We detected a ' + this.props.value.currentChallenge.object_gate + ' in your picture, but your are not close enough!',
             disableSubmit: false
           });
         }
         else if (res.data.locationGate){
           this.setState({
             challengeRejectedOpen: true,
-            message: 'You are close enough, but we could not detect ' + this.props.value.currentChallenge.object_gate + ' in your picture.',
+            message: 'You are close enough, but we could not detect a ' + this.props.value.currentChallenge.object_gate + ' in your picture.',
             disableSubmit: false
           });
         }
         else{
           this.setState({
             challengeRejectedOpen: true,
-            message: 'You are not close enough and we could not detect ' + this.props.value.currentChallenge.object_gate + ' in your picture.',
+            message: 'You are not close enough and we could not detect a ' + this.props.value.currentChallenge.object_gate + ' in your picture.',
             disableSubmit: false
           });
         }
