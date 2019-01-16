@@ -27,7 +27,7 @@ class GameRoom extends Component {
             GAME ROOM
           </Typography>
           <GameContext.Consumer>{
-              (game) => ( //can rewrite this as (userProviderState) => () if that's more clear
+              (game) => (
                 <div>
                    <GameRoomCard value={game}/>
                  </div>
@@ -36,9 +36,9 @@ class GameRoom extends Component {
 
       </div>
       </Grow>
-    );//end return
-  }//end render
-}//end GameRoom component
+    );
+  }
+}
 
 GameRoom.propTypes = {
   classes: PropTypes.object.isRequired
