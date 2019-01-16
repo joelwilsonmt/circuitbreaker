@@ -36,7 +36,7 @@ function ButtonAppBar(props) {
           </Typography>
           <Typography variant="h5" color="inherit">
             <GameContext.Consumer>{
-                (session) => ( //can be rewreitten as (userProviderState)
+                (session) => ( 
                     <span>{session.user.username}</span>
                 )
               }</GameContext.Consumer>

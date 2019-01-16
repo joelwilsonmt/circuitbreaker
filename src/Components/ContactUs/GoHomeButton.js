@@ -20,17 +20,13 @@ class ButtonSizes extends React.Component {
     }
   }
   componentWillMount() {
-    //console.log(this.props.value);
+
   }
   handleClick = () => {
     this.setState({
       disableSubmit: true
     })
-    //clear current user circuit
-    //delete circuit
-    //change to screen
-    //when Gameroom mounts, the user is updated and their game state is cleared
-    //so keep this as setScreen...
+    
     this.props.value.setScreen('OpeningScreen');
   }
   render(){
