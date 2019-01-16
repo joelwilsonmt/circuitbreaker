@@ -59,7 +59,7 @@ export default class App extends Component {
     } else {
       console.error("Browser does not support Geolocation");
     }
-    //put this.props.socket.sendWin() in axios put for win
+
   }
   componentWillUnmount() {
     this.props.value.setView('');
@@ -95,7 +95,7 @@ export default class App extends Component {
     this.setState({
       disableSubmit: true
     });
-    // console.log("data: ", req);
+
     console.log("current challenge index: ", this.props.value.currentChallengeIndex);
     let req = {
       screenshot: this.state.screenshot,
@@ -106,15 +106,15 @@ export default class App extends Component {
       challengeIndex: this.props.value.currentChallengeIndex,
       user_position: [this.state.location.coords.latitude, this.state.location.coords.longitude]
     };
-    // console.log("data to server: ", req);
+
     console.log("the challenge ID in question: ", this.props.value.currentChallenge._id)
     axios.put(process.env.REACT_APP_BACK_END_SERVER + 'submitChallenge', req)
     .then((res)=>{
       console.log(res);
-      //only one dialogue, no need to set message
+
       if(res.data.circuitComplete){
         console.log("circuit complete!");
-        //socket event disconnect all`
+
         this.props.socket.circuitComplete(this.state.screenshot);
         this.setState({
           userWonCircuit: true //opens a dialogue box directing user to next screen
@@ -135,7 +135,7 @@ export default class App extends Component {
         if (res.data.objectGate){
           this.setState({
             challengeRejectedOpen: true,
-            message: 'We detected a ' + this.props.value.currentChallenge.object_gate + ' in your picture, but your are not close enough!',
+            message: 'We detected a ' + this.props.value.currentChallenge.object_gate + ' in your picture, but you are not close enough!',
             disableSubmit: false
           });
         }
@@ -371,104 +371,3 @@ export default class App extends Component {
     }//closes else
   }
 }
-
-
-/*
-ORIGINAL CAMERA.JS CODE WITH OLD NPM
-
-export default class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.takePicture = this.takePicture.bind(this);
-    this.state = {blob:''};
-    this.confirmphoto.bind(this)
-  }
-
-  takePicture() {
-    this.camera.capture()
-    .then(blob => {
-      this.img.src = URL.createObjectURL(blob)
-      this.img.onload = () => {
-        URL.revokeObjectURL(this.src)
-      }
-      this.setState({
-        blob:blob
-      })
-    })
-  }
-
-  confirmphoto() {
-    console.log("blob contents:", this.state.blob);
-    axios.post(process.env.REACT_APP_BACK_END_SERVER + 'submitChallenge', this.state.blob)
-    .then((res)=>{
-      console.log(res);
-    })
-    .catch((err)=>{
-      console.log(err);
-    });//end axios call
-  }
-
-  render() {
-    return (
-      <div style={style.container}>
-
-        <Camera
-          style={style.preview}
-          ref={(cam) => {
-            this.camera = cam;
-          }}
-        >
-
-          <div style={style.captureContainer} onClick={this.takePicture}>
-            <div style={style.captureButton} />
-          </div>
-        </Camera>
-
-        <img
-          style={style.captureImage}
-          ref={(img) => {
-            this.img = img;
-          }}
-        />
-
-        <CameraButtons confirmphoto={
-              this.confirmphoto.bind(this)}/>
-
-      </div>
-    );
-  }
-}
-
-*/
-
-
-/*
-STYLE TO UNLOAD LATER
-
-const style = {
-  preview: {
-    position: 'relative',
-  },
-  captureContainer: {
-    display: 'flex',
-    position: 'absolute',
-    justifyContent: 'center',
-    zIndex: 1,
-    bottom: 0,
-    width: '100%'
-  },
-  captureButton: {
-    backgroundColor: '#fff',
-    borderRadius: '50%',
-    height: 56,
-    width: 56,
-    color: '#000',
-    margin: 20
-  },
-  captureImage: {
-    width: '100%'
-  }
-};
-
-*/

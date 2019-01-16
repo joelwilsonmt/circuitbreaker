@@ -3,8 +3,7 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import Paper from '@material-ui/core/Paper';
 import Typography from "@material-ui/core/Typography";
 import {GameContext} from "../Contexts/GameContext";
-//sonic gif: https://media.giphy.com/media/5Mrn3s7rQRvPO/giphy.gif
-//pikachu: https://images.newschoolers.com/images/17/00/68/70/05/687005_50w_50h_zc.gif
+
 
 export class MapContainer extends React.Component {
   constructor(props) {

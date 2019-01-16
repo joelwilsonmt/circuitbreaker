@@ -14,19 +14,6 @@ import Grow from '@material-ui/core/Grow';
 import WorldGif from './world-trans.png'
 
 
-// const styles = theme => ({
-//
-//   root: {
-//     ...theme.mixins.gutters(),
-//     paddingTop: theme.spacing.unit * 10,
-//     paddingBottom: theme.spacing.unit * 10
-//   },
-//   paper: {
-//     padding: theme.spacing.unit * 22,
-//     textAlign: 'center',
-//   },
-//
-// });
 
 class OpeningScreen extends React.Component {
   constructor(props) {
@@ -41,6 +28,8 @@ class OpeningScreen extends React.Component {
         {message: 'You must go to each location and take a selfie with whatever object it says',
         buttonText: 'Next'},
         {message: 'Complete all the challenges to break the circuit!',
+        buttonText: 'Next'},
+        {message: 'Make sure the location services for your browser are tured on. Your phone cannot be in low power mode.',
         buttonText: 'Close'}
       ]
     };
@@ -56,7 +45,7 @@ class OpeningScreen extends React.Component {
   nextMessage = (slideNum) => {
     console.log("slide number: ", slideNum);
     slideNum += 1;
-    if(slideNum > 2) {
+    if(slideNum > 3) {
       this.setState({
         introWindowOpen: false
       });
@@ -82,7 +71,7 @@ class OpeningScreen extends React.Component {
           </Typography>
           <img className="padder logo" src='https://www.quantil.com/resources/hp-globe.gif'/>
           <GameContext.Consumer>{
-            (game) => ( //can rewrite this as (userProviderState) => () if that's more clear
+            (game) => ( 
               <div className="animated pulse infinite">
                 <DialogBox value={game} />
               </div>
