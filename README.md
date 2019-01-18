@@ -11,7 +11,7 @@ You will need API Keys from HERE, AWS, and Google Maps.
 
 Set up a MongoDB account and link the database repository in the .env file in the DB_CONFIG field.
 
-To run the program start nodemon server.js and npm start.
+To run the program, intiate nodemon server.js and npm start.
 
 ## Available Scripts
 
