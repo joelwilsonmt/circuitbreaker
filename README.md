@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+## Cloning and Running App Locally
+Clone the directory.
+Run NPM install.
+Set up an .env file. An example of this file with some of the necessary information is in this repository.
+You will need API Keys from HERE, AWS, and Google Maps.  
+Set up a MongoDB account and link the database repository in the .env file in the DB_CONFIG field.
+To run the program start nodemon server.js and npm start.
 
 ## Available Scripts
 
