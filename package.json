@@ -33,6 +33,7 @@
     "react-dom": "^16.6.3",
     "react-html5-camera-photo": "^1.2.9",
     "react-https-redirect": "^1.0.11",
+    "react-jss": "8.0.0",
     "react-native-camera": "^1.5.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.2",
