@@ -198,11 +198,11 @@ h2 {
 }
 
 /*-----------------transparent dialogues--------------------------*/
-div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper'] {
+div[class^='MuiDialog-paper'], div[class*=' MuiDialog-paper'], .dialog {
   background: rgba(0,0,0,.9) !important;
   border: 1px solid #aaa;
 }
-div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *{
+div[class^='MuiDialog-paper'] *, div[class*=' MuiDialog-paper'] *, .dialog *{
   color: #fff !important;
 }
 
