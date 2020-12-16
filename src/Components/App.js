@@ -1,5 +1,5 @@
 import React from "react";
-import Grow from '@material-ui/core/Grow';
+// import Grow from '@material-ui/core/Grow';
 import GameRoom from "./GameRoom/GameRoom";
 import ChallengesWrapper from "./Challenges/ChallengesWrapper";
 // import Challenges from "./Challenges/Challenges";
@@ -8,20 +8,20 @@ import Camera from "./Camera/Camera";
 import ContactUs from "./ContactUs/ContactUs";
 import CircuitReview from "./CircuitReview/CircuitReview";
 import OpeningScreen from "./OpeningScreen/OpeningScreen";
-import MainAppBar from "./Utilities/MainAppBar";
+// import MainAppBar from "./Utilities/MainAppBar";
 import NoPage from "./Utilities/NoPage";
-import ContactUsButton from "./ContactUs/ContactUsButton";
+// import ContactUsButton from "./ContactUs/ContactUsButton";
 // import GameProvider from "./Contexts/GameContext";
 // import {GameContext} from "./Contexts/GameContext";
-import {createMuiTheme} from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import Background from './Images/circuit4.jpg';
-import {GameContext} from "./Contexts/GameContext";
+// import Background from './Images/circuit4.jpg';
+import { GameContext } from "./Contexts/GameContext";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-    //  main: '#448AFF',
+      //  main: '#448AFF',
       main: '#555',
       contrastText: '#eeeeee',
     },
@@ -49,7 +49,7 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     //document.body.style.backgroundImage = `url(${Background})`;
 
   }
@@ -59,74 +59,74 @@ class App extends React.Component {
       return (
         <div>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-            <OpeningScreen/>
+            {/* <MainAppBar/> */}
+            <OpeningScreen />
           </MuiThemeProvider>
         </div>
       );
     }
-    else if (this.props.value.screen === 'GameRoom'){
+    else if (this.props.value.screen === 'GameRoom') {
       return (
         <div>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-            <GameRoom/>
+            {/* <MainAppBar/> */}
+            <GameRoom />
           </MuiThemeProvider>
         </div>
 
       );
     }
-    else if (this.props.value.screen === 'Challenges'){
+    else if (this.props.value.screen === 'Challenges') {
       return (
         <div Grow in={this.state.willGrow} timeout={1000}>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-            <ChallengesWrapper/>
+            {/* <MainAppBar/> */}
+            <ChallengesWrapper />
           </MuiThemeProvider>
         </div>
       );
     }
-    else if (this.props.value.screen === 'Camera'){
+    else if (this.props.value.screen === 'Camera') {
       return (
 
         <div>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-            <Camera/>
-          </MuiThemeProvider>
-        </div>
-
-      );
-    }
-    else if (this.props.value.screen === 'ContactUs'){
-      return (
-
-        <div>
-          <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-            <ContactUs/>
+            {/* <MainAppBar/> */}
+            <Camera />
           </MuiThemeProvider>
         </div>
 
       );
     }
-    else if (this.props.value.screen === 'CircuitReview'){
+    else if (this.props.value.screen === 'ContactUs') {
+      return (
+
+        <div>
+          <MuiThemeProvider theme={theme}>
+            {/* <MainAppBar/> */}
+            <ContactUs />
+          </MuiThemeProvider>
+        </div>
+
+      );
+    }
+    else if (this.props.value.screen === 'CircuitReview') {
       return (
         <div>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
-              <GameContext.Consumer>{
-                  (game) => (<CircuitReview value={game}/>)
-          }</GameContext.Consumer>
+            {/* <MainAppBar/> */}
+            <GameContext.Consumer>{
+              (game) => (<CircuitReview value={game} />)
+            }</GameContext.Consumer>
           </MuiThemeProvider>
         </div>
       );
     }
     else {
-      return(
+      return (
         <div>
           <MuiThemeProvider theme={theme}>
-            <MainAppBar/>
+            {/* <MainAppBar/> */}
             <NoPage />
           </MuiThemeProvider>
         </div>

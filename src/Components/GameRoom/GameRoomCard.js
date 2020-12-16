@@ -1,13 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
-import {GameContext} from "../Contexts/GameContext";
+import { GameContext } from "../Contexts/GameContext";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 /*
@@ -42,11 +39,11 @@ class SimpleCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  foundCircuit: '',
-                  circuitFound: false,
-                  message: 'Searching for circuits...',
-                  disableSubmit: false
-                  }
+      foundCircuit: '',
+      circuitFound: false,
+      message: 'Searching for circuits...',
+      disableSubmit: false
+    }
   }
   componentWillMount() {
     this.props.value.clearCircuitState();
@@ -54,7 +51,7 @@ class SimpleCard extends React.Component {
     var userId = this.props.value.user._id;
     var roomName = '';
     //get a list of circuits that match a user's boundary:
-    axios.post(process.env.REACT_APP_BACK_END_SERVER + 'getCircuits/', {userId: userId}).then(
+    axios.post(process.env.REACT_APP_BACK_END_SERVER + 'getCircuits/', { userId: userId }).then(
       (res) => {
         var circuit = res.data;
         console.log("server returned circuit info: ", circuit);
@@ -62,33 +59,33 @@ class SimpleCard extends React.Component {
         console.log("room name / circuit id: " + roomName);
         this.setState(
           {
-          foundCircuit: circuit,
-          circuitFound: true,
-          message: 'Circuit Found!'
-        }
+            foundCircuit: circuit,
+            circuitFound: true,
+            message: 'Circuit Found!'
+          }
         );
         //DO NOT UPDATE GAME HERE, THAT IS DONE ON THE HANDLEJOIN FUNCTION
         //TODO set corresponding game circuit object through GameProvider
 
-      }).catch( (err) => {
+      }).catch((err) => {
         console.error("error", err);
-        if(userId !== ''){
+        if (userId !== '') {
           console.log("Get circuits failed, creating circuit in database");
-          axios.post(process.env.REACT_APP_BACK_END_SERVER + 'addCircuit/', {userId: userId}).then(
-          (res) => {
-            var newCircuit = res.data;
-            console.log("add circuit successful: ", newCircuit);
-            this.setState(
-              {
-              foundCircuit: newCircuit,
-              circuitFound: true,
-              message: 'Circuit Added!'
+          axios.post(process.env.REACT_APP_BACK_END_SERVER + 'addCircuit/', { userId: userId }).then(
+            (res) => {
+              var newCircuit = res.data;
+              console.log("add circuit successful: ", newCircuit);
+              this.setState(
+                {
+                  foundCircuit: newCircuit,
+                  circuitFound: true,
+                  message: 'Circuit Added!'
 
-              }
-            );
-          }).catch(function(err){
-            console.error(err);
-          });
+                }
+              );
+            }).catch(function (err) {
+              console.error(err);
+            });
         }
         else {
           this.setState({
@@ -110,15 +107,15 @@ class SimpleCard extends React.Component {
     console.log("request body: ", req);
     //console.log("circuit object: ", this.props.value.user.current_circuit_id);
     axios.put(process.env.REACT_APP_BACK_END_SERVER + 'assignUserToCircuit/', req)
-    .then(
-      (res) => {
-        console.log("Server has assigned user to circuit");
-        game.updateGameAndSetScreen(game.user._id, 'Challenges');
-        console.log("Game Provider updated, user id in GameRoomCard: ",game.user._id);
-        //then route user to challenge screen
+      .then(
+        (res) => {
+          console.log("Server has assigned user to circuit");
+          game.updateGameAndSetScreen(game.user._id, 'Challenges');
+          console.log("Game Provider updated, user id in GameRoomCard: ", game.user._id);
+          //then route user to challenge screen
 
-      })
-      .catch(function(err){
+        })
+      .catch(function (err) {
         console.error(err);
       });
   }
@@ -127,32 +124,34 @@ class SimpleCard extends React.Component {
   render() {
     return (
       <div>
-          <Typography variant="h6" component="h2" align="center">
-            {this.state.message}
-          </Typography>
+        <Typography variant="h6" component="h2" align="center">
+          {this.state.message}
+        </Typography>
 
-            {
-              this.state.foundCircuit.challenges
-              ?
-              <div>
+        {
+          this.state.foundCircuit.challenges
+            ?
+            <div>
               <Typography variant="h6" align="center">Circuit Found with  {this.state.foundCircuit.challenges.length} Challenges</Typography>
-              </div>
-              :
-              <CircularProgress/>
-            }
+            </div>
+            :
+            <CircularProgress />
+        }
 
-          {this.state.circuitFound ?
-            <GameContext.Consumer>{
-                (game) => (
-            <Button
-              variant="contained"
-              color="primary"
-              className="animated pulse infinite center"
-              disabled={this.state.disableSubmit}
-              Button onClick={() => this.handleJoin(game)}>
-              {this.state.disableSubmit ? <CircularProgress  size={16}/> : 'Join Circuit'}
-            </Button>
-        )}</GameContext.Consumer>: ''}
+        {this.state.circuitFound ?
+          <GameContext.Consumer>{
+            (game) => (
+              <Button
+                variant="contained"
+                color="primary"
+                className="animated pulse infinite center"
+                disabled={this.state.disableSubmit}
+                style={{ marginTop: 30 }}
+                onClick={() => this.handleJoin(game)}
+              >
+                {this.state.disableSubmit ? <CircularProgress size={16} /> : 'Join Circuit'}
+              </Button>
+            )}</GameContext.Consumer> : ''}
       </div>
     );
   }

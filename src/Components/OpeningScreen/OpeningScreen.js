@@ -2,7 +2,7 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import DialogBox from "./DialogBox"
-import {GameContext} from "../Contexts/GameContext";
+import { GameContext } from "../Contexts/GameContext";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -11,7 +11,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grow from '@material-ui/core/Grow';
-import WorldGif from './world-trans.png'
 
 
 
@@ -23,14 +22,22 @@ class OpeningScreen extends React.Component {
       introWindowOpen: true,
       slide: 0,
       messages: [
-        {message: 'CircuitBreaker is an interactive game where you take selfies with objects in certain places',
-        buttonText: 'Next'},
-        {message: 'You must go to each location and take a selfie with whatever object it says',
-        buttonText: 'Next'},
-        {message: 'Complete all the challenges to break the circuit!',
-        buttonText: 'Next'},
-        {message: 'Make sure the location services for your browser are tured on. Your phone cannot be in low power mode.',
-        buttonText: 'Close'}
+        {
+          message: 'CircuitBreaker is an interactive game where you take selfies with objects in certain places',
+          buttonText: 'Next'
+        },
+        {
+          message: 'You must go to each location and take a selfie with whatever object it says',
+          buttonText: 'Next'
+        },
+        {
+          message: 'Complete all the challenges to break the circuit!',
+          buttonText: 'Next'
+        },
+        {
+          message: 'Make sure the location services for your browser are tured on. Your phone cannot be in low power mode.',
+          buttonText: 'Close'
+        }
       ]
     };
   }
@@ -45,7 +52,7 @@ class OpeningScreen extends React.Component {
   nextMessage = (slideNum) => {
     console.log("slide number: ", slideNum);
     slideNum += 1;
-    if(slideNum > 3) {
+    if (slideNum > 3) {
       this.setState({
         introWindowOpen: false
       });
@@ -61,17 +68,17 @@ class OpeningScreen extends React.Component {
       introWindowOpen: false
     });
   }
-  render(){
+  render() {
     return (
-       <Grow in={this.state.willGrow} timeout={1000}>
+      <Grow in={this.state.willGrow} timeout={1000}>
 
         <div className="screen">
           <Typography className="white" variant="h2">
             CIRCUIT BREAKER
           </Typography>
-          <img className="padder logo" src='https://www.quantil.com/resources/hp-globe.gif'/>
+          <img className="padder logo" src='https://media4.giphy.com/media/RFYlvXwTThk4M/source.gif' />
           <GameContext.Consumer>{
-            (game) => ( 
+            (game) => (
               <div className="animated pulse infinite">
                 <DialogBox value={game} />
               </div>
@@ -99,12 +106,12 @@ class OpeningScreen extends React.Component {
                 justify="center"
                 onClick={() => {
                   this.nextMessage(this.state.slide)
-                  }}>
+                }}>
                 {this.state.messages[this.state.slide].buttonText}
               </Button>
             </DialogActions>
           </Dialog>
-      </div>
+        </div>
       </Grow>
 
     );

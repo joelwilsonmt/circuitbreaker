@@ -1,34 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Aldrich');
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 h1 h1,h2,h3,h4,h5,h6, div {
-  font-family: 'Aldrich', sans-serif !important;
+  font-family: 'Bebas Neue', sans-serif !important;
   letter-spacing: 0.05em !important;
   color: #FFF !important;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 p, li, span, input, label {
-  font-family: 'Exo 2', sans-serif !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
   letter-spacing: 0.1em !important;
   word-spacing: 0.01em !important;
 }
 
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 html {
     overflow: scroll;
-    overflow-x: hidden;
-    /*background:  url(https://media.giphy.com/media/Qgx8fFTysBHYQ/giphy.gif) no-repeat center center fixed;*/
-    /*background: url(https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif) no-repeat center center fixed;*/
-    background: url(https://media.giphy.com/media/1pmatQ3LcP5XFYxSWF/giphy.gif) no-repeat center center fixed;
-    height: 100%;
-    background-size: cover;
+    overflow-x: hidden; 
+    height: 100%; 
 }
+
 body {
-    margin: 0 !important;
-  	padding: 0 !important;
-  	border: 0 !important;
-    min-height: 100%;
-    background-size: cover;
-    background: rgba(0,0,0,.5) !important;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-height: 100%;
 }
 #root {
   min-height: 100%;
@@ -36,6 +46,8 @@ body {
 .MuiButton-contained-188 {
   box-shadow: none !important;
 }
+
+
 
 .white, .white h1, .white h2, .white h3, .white h4, .white h5, .white h6, .white p, .white span, .white input, .white label, .white li {
   color: #fff !important;
@@ -115,11 +127,11 @@ h2 {
 }
 
 /******--------------------dark theme expansion panels?---------------------*/
-.expansion-panels .MuiPaper-root-10 {
+.expansion-panels [class^="MuiPaper-root"] {
   background-color: transparent !important;
   box-shadow: 0px 1px 3px 0px rgba(255, 255, 255, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.14), 0px 2px 1px -1px rgba(255, 255, 255, 0.12)
 }
-.expansion-panels .MuiPaper-root-10 *{
+.expansion-panels [class^="MuiPaper-root"] *{
   color: #fff !important;
 }
 .expansion-panels .MuiSvgIcon-root-430 {
