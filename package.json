@@ -42,6 +42,7 @@
     "react-webcam": "^1.0.4",
     "recordrtc": "^5.4.9",
     "socket.io": "^2.2.0",
+    "styled-components": "^5.2.1",
     "synonyms": "^1.0.1"
   },
   "scripts": {

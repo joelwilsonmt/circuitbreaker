@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components"
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import DialogBox from "./DialogBox"
@@ -12,6 +13,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grow from '@material-ui/core/Grow';
 
+const StyledDialog = styled(Dialog)`
+  
+`
 
 
 class OpeningScreen extends React.Component {
@@ -85,7 +89,7 @@ class OpeningScreen extends React.Component {
             )
           }</GameContext.Consumer>
           <Dialog
-            className="trans dialog"
+            className="trans"
             open={this.state.introWindowOpen}
             onClose={this.handleClose}
             aria-labelledby="form-dialog-title"
